@@ -4,6 +4,7 @@
   "description": "Add terminating newline if none exists. Supports Unix and Windows newline styles.",
   "main": "./build/index.js",
   "author": "Connor White",
+  "homepage": "https://connorwhite.org/github/terminating-newline",
   "keywords": [
     "terminating",
     "newline",
