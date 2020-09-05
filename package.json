@@ -17,12 +17,14 @@
     "last",
     "end",
     "one",
-    "unix",
-    "windows",
     "carriage",
     "return",
     "line",
-    "feed"
+    "feed",
+    "unix",
+    "mac",
+    "windows",
+    "os"
   ],
   "files": [
     "build"
