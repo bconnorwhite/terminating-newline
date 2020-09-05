@@ -1,7 +1,7 @@
 {
   "name": "terminating-newline",
   "version": "1.0.1",
-  "description": "Add terminating newline if none exists. Supports Unix and Windows newline styles.",
+  "description": "Add or remove a terminating newline",
   "main": "./build/index.js",
   "author": "Connor White",
   "homepage": "https://connorwhite.org/github/terminating-newline",
