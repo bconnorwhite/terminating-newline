@@ -24,6 +24,9 @@
     "line",
     "feed"
   ],
+  "files": [
+    "build"
+  ],
   "main": "./build/index.js",
   "scripts": {
     "build": "bob build",
