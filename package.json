@@ -2,13 +2,21 @@
   "name": "terminating-newline",
   "version": "1.0.1",
   "description": "Add or remove a terminating newline",
-  "main": "./build/index.js",
-  "author": "Connor White",
+  "author": "Connor White <connor.bcw@gmail.com>",
+  "license": "MIT",
   "homepage": "https://connorwhite.org/github/terminating-newline",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bconnorwhite/terminating-newline.git"
+  },
+  "bugs": "https://github.com/bconnorwhite/terminating-newline",
   "keywords": [
     "terminating",
     "newline",
     "add",
+    "remove",
+    "last",
+    "end",
     "one",
     "unix",
     "windows",
@@ -17,14 +25,11 @@
     "line",
     "feed"
   ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bconnorwhite/terminating-newline.git"
-  },
+  "main": "./build/index.js",
   "scripts": {
     "build": "bob build",
     "prepublishOnly": "yarn build && yarn test",
+    "postversion": "git push",
     "test": "jest"
   },
   "dependencies": {
