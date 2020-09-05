@@ -1,6 +1,6 @@
 {
   "name": "terminating-newline",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Add or remove a terminating newline",
   "author": "Connor White <connor.bcw@gmail.com>",
   "license": "MIT",
