@@ -19,3 +19,23 @@ test("carriage return line feed no remove", () => {
   const string = removeTerminatingNewline("a\r\nb");
   expect(string).toBe("a\r\nb");
 });
+
+test("line feed remove (buffer)", () => {
+  const string = removeTerminatingNewline(Buffer.from("a\nb\n"));
+  expect(string.toString()).toBe(Buffer.from("a\nb").toString());
+});
+
+test("line feed no remove (buffer)", () => {
+  const string = removeTerminatingNewline(Buffer.from("a\nb"));
+  expect(string.toString()).toBe(Buffer.from("a\nb").toString());
+});
+
+test("carriage return line feed remove (buffer)", () => {
+  const string = removeTerminatingNewline(Buffer.from("a\r\nb\r\n"));
+  expect(string.toString()).toBe(Buffer.from("a\r\nb").toString());
+});
+
+test("carriage return line feed no remove (buffer)", () => {
+  const string = removeTerminatingNewline(Buffer.from("a\r\nb"));
+  expect(string.toString()).toBe(Buffer.from("a\r\nb").toString());
+});

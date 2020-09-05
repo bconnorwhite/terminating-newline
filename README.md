@@ -50,8 +50,10 @@ removeTerminatingNewline("abc\n"); // "abc"
 ### Types
 ```ts
 function addTerminatingNewline(string: string, options?: Options): string;
+function addTerminatingNewline(buffer: Buffer, options?: Options): Buffer;
 
 function removeTerminatingNewline(string: string): string;
+function removeTerminatingNewline(buffer: Buffer): Buffer;
 
 type Options = {
   // Fallback if newline type cannot be determined. Defaults to "\n".
@@ -79,6 +81,7 @@ type CarriageReturnLineFeed = "\r\n";
 <h2>Dev Dependencies<img align="right" alt="David" src="https://img.shields.io/david/dev/bconnorwhite/terminating-newline.svg"></h2>
 
 - [@bconnorwhite/bob](https://npmjs.com/package/@bconnorwhite/bob): Bob builds and watches typescript projects.
+- [@types/node](https://npmjs.com/package/@types/node): TypeScript definitions for Node.js
 - [jest](https://npmjs.com/package/jest): Delightful JavaScript Testing.
 
 ##
