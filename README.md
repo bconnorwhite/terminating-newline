@@ -49,14 +49,13 @@ removeTerminatingNewline("abc\n"); // "abc"
 ```
 ### Types
 ```ts
-import { addTerminatingNewline, Options } from "terminating-newline";
+function addTerminatingNewline(string: string, options?: Options): string;
 
-addTerminatingNewline(string: string, options?: Options) => string;
-
-removeTerminatingNewline(string: string) => string;
+function removeTerminatingNewline(string: string): string;
 
 type Options = {
-  default?: LineFeed | CarriageReturnLineFeed; // Fallback if newline type cannot be determined. Defaults to "\n".
+  // Fallback if newline type cannot be determined. Defaults to "\n".
+  default?: LineFeed | CarriageReturnLineFeed;
 }
 
 type LineFeed = "\n";
