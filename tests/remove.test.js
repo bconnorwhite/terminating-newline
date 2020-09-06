@@ -39,3 +39,13 @@ test("carriage return line feed no remove (buffer)", () => {
   const string = removeTerminatingNewline(Buffer.from("a\r\nb"));
   expect(string.toString()).toBe(Buffer.from("a\r\nb").toString());
 });
+
+test("empty", () => {
+  const string = removeTerminatingNewline("");
+  expect(string).toBe("");
+});
+
+test("empty (buffer)", () => {
+  const buffer = removeTerminatingNewline(Buffer.from(""));
+  expect(buffer.toString()).toBe("");
+});
