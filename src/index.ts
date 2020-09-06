@@ -20,8 +20,13 @@ function charToString(character: string | number) {
 
 function endsWith(input: string | Buffer, string: string) { // Does input end with string?
   return Array.from(string).reverse().reduce((retval, match, index) => {
-    const char = input[input.length-(index+1)];
-    return retval && charToString(char) === match;
+    const pointer = input.length-(index+1);
+    if(pointer >= 0 && pointer < input.length) {
+      const char = input[pointer];
+      return retval && charToString(char) === match;
+    } else {
+      return false;
+    }
   }, true);
 }
 
