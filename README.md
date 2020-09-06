@@ -69,7 +69,6 @@ type CarriageReturnLineFeed = "\r\n";
 
 <br />
 
-
 <h2>Dependencies<img align="right" alt="dependencies" src="https://img.shields.io/david/bconnorwhite/terminating-newline.svg"></h2>
 
 - [detect-newline](https://npmjs.com/package/detect-newline): Detect the dominant newline character of a string

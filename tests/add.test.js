@@ -59,5 +59,3 @@ test("line feed add no default", () => {
   const string = addTerminatingNewline(Buffer.from("a"));
   expect(string.toString()).toBe(Buffer.from("a\n").toString());
 });
-
-
