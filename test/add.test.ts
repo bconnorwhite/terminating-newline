@@ -41,22 +41,22 @@ test("line feed no add (buffer)", () => {
   expect(string.toString()).toBe(Buffer.from("a\nb\n").toString());
 });
 
-test("carriage return line feed add", () => {
+test("carriage return line feed add (buffer)", () => {
   const string = addTerminatingNewline(Buffer.from("a\r\nb"));
   expect(string.toString()).toBe(Buffer.from("a\r\nb\r\n").toString());
 });
 
-test("carriage return line feed no add", () => {
+test("carriage return line feed no add (buffer)", () => {
   const string = addTerminatingNewline(Buffer.from("a\r\nb\r\n"));
   expect(string.toString()).toBe(Buffer.from("a\r\nb\r\n").toString());
 });
 
-test("line feed add default", () => {
+test("line feed add default (buffer)", () => {
   const string = addTerminatingNewline(Buffer.from("a"), { default: "\r\n" });
   expect(string.toString()).toBe(Buffer.from("a\r\n").toString());
 });
 
-test("line feed add no default", () => {
+test("line feed add no default (buffer)", () => {
   const string = addTerminatingNewline(Buffer.from("a"));
   expect(string.toString()).toBe(Buffer.from("a\n").toString());
 });
