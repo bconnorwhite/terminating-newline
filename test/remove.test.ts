@@ -1,4 +1,5 @@
-const { removeTerminatingNewline } = require("../build/index.js");
+import { test, expect } from "@jest/globals";
+import { removeTerminatingNewline } from "../source";
 
 test("line feed remove", () => {
   const string = removeTerminatingNewline("a\nb\n");

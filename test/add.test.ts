@@ -1,4 +1,5 @@
-const { addTerminatingNewline } = require("../build/index.js");
+import { test, expect } from "@jest/globals";
+import { addTerminatingNewline } from "../source";
 
 test("line feed add", () => {
   const string = addTerminatingNewline("a\nb");

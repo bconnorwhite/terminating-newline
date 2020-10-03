@@ -2,8 +2,12 @@
   "name": "terminating-newline",
   "version": "1.2.2",
   "description": "Add or remove a terminating newline",
-  "author": "Connor White <connor.bcw@gmail.com>",
   "license": "MIT",
+  "author": {
+    "name": "Connor White",
+    "email": "connor.bcw@gmail.com",
+    "url": "https://connorwhite.org"
+  },
   "homepage": "https://connorwhite.org/github/terminating-newline",
   "repository": {
     "type": "git",
@@ -32,16 +36,27 @@
   "main": "./build/index.js",
   "scripts": {
     "build": "bob build",
-    "prepublishOnly": "yarn build && yarn test",
-    "postversion": "git push",
-    "test": "jest"
+    "commit": "bob commit",
+    "lint": "bob lint",
+    "release": "bob publish",
+    "test": "bob test"
   },
   "dependencies": {
-    "detect-newline": "^3.1.0"
+    "detect-newline": "^3.1.0",
+    "ends-with-string": "^1.0.0"
   },
   "devDependencies": {
-    "@bconnorwhite/bob": "^1.9.7",
-    "@types/node": "^14.6.4",
-    "jest": "^26.4.2"
+    "@bconnorwhite/bob": "^2.9.2"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-bob"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "bob lint commit"
+    }
+  },
+  "npmpackagejsonlint": {
+    "extends": "npm-package-json-lint-config-bob"
   }
 }

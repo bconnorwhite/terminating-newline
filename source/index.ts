@@ -1,11 +1,15 @@
 import detectNewline from "detect-newline";
+import endsWith from "ends-with-string";
 
 export type LineFeed = "\n";
 
 export type CarriageReturnLineFeed = "\r\n";
 
 export type Options = {
-  default?: LineFeed | CarriageReturnLineFeed; // Fallback if newline type cannot be determined. Defaults to "\n".
+  /**
+   * Fallback if newline type cannot be determined. Default: "\n"
+   */
+  default?: LineFeed | CarriageReturnLineFeed;
 }
 
 export const lineFeed = "\n";
@@ -13,22 +17,6 @@ export const lineFeed = "\n";
 export const carriageReturn = "\r";
 
 export const carriageReturnLineFeed = "\r\n";
-
-function charToString(character: string | number) {
-  return typeof character === "string" ? character : String.fromCharCode(character);
-}
-
-function endsWith(input: string | Buffer, string: string) { // Does input end with string?
-  return Array.from(string).reverse().reduce((retval, match, index) => {
-    const pointer = input.length-(index+1);
-    if(pointer >= 0 && pointer < input.length) {
-      const char = input[pointer];
-      return retval && charToString(char) === match;
-    } else {
-      return false;
-    }
-  }, true);
-}
 
 const defaultNewline = lineFeed;
 
