@@ -7,6 +7,6 @@ export default function removeTerminatingNewline<T extends string | Buffer>(inpu
   } else if(endsWith(input, lineFeed)) {
     return input.slice(0, input.length - lineFeed.length) as ReturnValue<T>;
   } else {
-    return input as (string | Buffer) as ReturnValue<T>
+    return input as (string | Buffer) as ReturnValue<T>;
   }
 }

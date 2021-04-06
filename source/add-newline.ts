@@ -7,7 +7,7 @@ export type Options = {
    * Fallback if newline type cannot be determined. Default: "\n"
    */
   default?: LineFeed | CarriageReturnLineFeed;
-}
+};
 
 function addTerminatingNewlineToBuffer(input: Buffer, options?: Options) {
   const newline = detectNewline(input.toString()) ?? options?.default ?? lineFeed;

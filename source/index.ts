@@ -20,4 +20,4 @@ export function isBuffer(input: string | Buffer): input is Buffer {
 export {
   addTerminatingNewline,
   removeTerminatingNewline
-}
+};
