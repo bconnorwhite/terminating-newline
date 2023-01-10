@@ -1,6 +1,6 @@
-import detectNewline from "detect-newline";
+import { detectNewline } from "detect-newline";
 import endsWith from "ends-with-string";
-import { isBuffer, lineFeed, LineFeed, CarriageReturnLineFeed, ReturnValue } from "./";
+import { isBuffer, lineFeed, LineFeed, CarriageReturnLineFeed, BufferOrString } from "./index.js";
 
 export type Options = {
   /**
@@ -27,11 +27,11 @@ function addTerminatingNewlineToString(input: string, options?: Options) {
   }
 }
 
-export default function addTerminatingNewline<T extends string | Buffer>(input: T, options?: Options): ReturnValue<T> {
+export default function addTerminatingNewline<T extends string | Buffer>(input: T, options?: Options): BufferOrString<T> {
   const content: string | Buffer = input;
   if(isBuffer(content)) {
-    return addTerminatingNewlineToBuffer(content, options) as ReturnValue<T>;
+    return addTerminatingNewlineToBuffer(content, options) as BufferOrString<T>;
   } else {
-    return addTerminatingNewlineToString(content, options) as ReturnValue<T>;
+    return addTerminatingNewlineToString(content, options) as BufferOrString<T>;
   }
 }

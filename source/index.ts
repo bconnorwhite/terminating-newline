@@ -1,5 +1,5 @@
-import addTerminatingNewline from "./add-newline";
-import removeTerminatingNewline from "./remove-newline";
+import addTerminatingNewline from "./add-newline.js";
+import removeTerminatingNewline from "./remove-newline.js";
 
 export type LineFeed = "\n";
 
@@ -11,7 +11,7 @@ export const carriageReturn = "\r";
 
 export const carriageReturnLineFeed = "\r\n";
 
-export type ReturnValue<T> = T extends Buffer ? Buffer : string;
+export type BufferOrString<T extends Buffer | string> = T extends Buffer ? Buffer : string;
 
 export function isBuffer(input: string | Buffer): input is Buffer {
   return typeof input === "object";

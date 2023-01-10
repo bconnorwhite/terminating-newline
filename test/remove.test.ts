@@ -1,5 +1,5 @@
 import { test, expect } from "@jest/globals";
-import { removeTerminatingNewline } from "../source";
+import { removeTerminatingNewline } from "../source/index.js";
 
 test("line feed remove", () => {
   const string = removeTerminatingNewline("a\nb\n");
