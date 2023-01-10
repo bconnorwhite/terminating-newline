@@ -1,3 +1,7 @@
+# [2.0.0](https://github.com/bconnorwhite/terminating-newline/compare/v1.2.4...v2.0.0) (2023-01-10)
+
+
+
 ## [1.2.4](https://github.com/bconnorwhite/terminating-newline/compare/v1.2.3...v1.2.4) (2020-10-03)
 
 
