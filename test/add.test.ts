@@ -1,5 +1,5 @@
 import { test, expect } from "@jest/globals";
-import { addTerminatingNewline } from "../source";
+import { addTerminatingNewline } from "../source/index.js";
 
 test("line feed add", () => {
   const string = addTerminatingNewline("a\nb");

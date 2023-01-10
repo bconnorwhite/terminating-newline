@@ -1,12 +1,20 @@
 import endsWith from "ends-with-string";
-import { lineFeed, carriageReturnLineFeed, ReturnValue } from ".";
+import { lineFeed, carriageReturnLineFeed, BufferOrString } from "./index.js";
 
-export default function removeTerminatingNewline<T extends string | Buffer>(input: T): ReturnValue<T> {
-  if(endsWith(input, carriageReturnLineFeed)) {
-    return input.slice(0, input.length - carriageReturnLineFeed.length) as ReturnValue<T>;
-  } else if(endsWith(input, lineFeed)) {
-    return input.slice(0, input.length - lineFeed.length) as ReturnValue<T>;
+function sliceStringOrBuffer(input: string | Buffer, start: number, end: number) {
+  if(typeof input === "string") {
+    return input.slice(start, end);
   } else {
-    return input as (string | Buffer) as ReturnValue<T>;
+    return input.subarray(start, end);
+  }
+}
+
+export default function removeTerminatingNewline<T extends string | Buffer>(input: T): BufferOrString<T> {
+  if(endsWith(input, carriageReturnLineFeed)) {
+    return sliceStringOrBuffer(input, 0, input.length - carriageReturnLineFeed.length) as BufferOrString<T>;
+  } else if(endsWith(input, lineFeed)) {
+    return sliceStringOrBuffer(input, 0, input.length - lineFeed.length) as BufferOrString<T>;
+  } else {
+    return input as (string | Buffer) as BufferOrString<T>;
   }
 }
